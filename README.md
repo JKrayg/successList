@@ -8,4 +8,8 @@ If the user navigates to the "Add Goal" page they have a text box to add a new g
 If the user navigates to the "Add bad habit" page it is very similar to the Add goal page. The user types in a bad habit, selects which days they want it to repeat and they are provided suggestions on bad habits that are determined by what most users are adding to their calendar. 
 On the login page there are "FAQ", "About Us" and "Contact Us" pages but they are pretty self explanatory.
 
+
+
+
+
 ![SuccessList UI flowchart](client/src/projectOutline.png)
