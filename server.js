@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("/", function(req, res) {
-    res.send("index");
+    res.send("Node server Works!");
   });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/successListdb";
