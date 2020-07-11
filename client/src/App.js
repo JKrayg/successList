@@ -1,12 +1,18 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SignInNav from "./components/SignInNav"
 
-function App() {
-  return (
-    <div>
-        <h1>Yellow World</h1>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path = "/" component = {SignInNav} />
+        </Switch>
+      </Router>
+    )
+  }
 }
 
 export default App;
+
