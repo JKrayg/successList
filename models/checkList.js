@@ -8,8 +8,8 @@ const checkList = new Schema({
         required: true
     },
 
-    habitType: {
-        type: Boolean,
+    type: {
+        type: String,
         require: true
     },
 

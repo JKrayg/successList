@@ -1,4 +1,4 @@
-# successList
+# SuccessList
 Success/Failure Checklist — You can set your goals that you want to accomplish daily and bad habits that you fall into. Then at the end of the day you go through a checklist to see your performance for that day and get scored. You can also go back and see previous days to see if you’ve been on track or have fallen back into bad habits. Maybe an overall score , like a bar that is green when you are sticking to your goals and avoiding your bad habits and then red when you’re not doing so well?, people like getting graded on things for some reason. Maybe a way to compare your checklist with others to keep each other motivated.
 
 
