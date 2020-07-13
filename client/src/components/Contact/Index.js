@@ -45,7 +45,7 @@ const containerStyle = {
 
 const contactStyle = {
     padding: "20px",
-    borderRadius: "5px 30px",
+    borderRadius: "4px 30px",
     border: "1px solid #4BB543",
     boxShadow: "3px 3px 10px",
     lineHeight: "2em",

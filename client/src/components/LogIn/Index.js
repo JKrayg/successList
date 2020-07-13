@@ -2,8 +2,16 @@ import React from 'react';
 import "./Login.css";
 import Header from "../Header/Index";
 import Helmet from 'react-helmet';
+import { useHistory } from "react-router-dom";
+
 
 function SignInNav() {
+    const history = useHistory();
+    function logInOnClick(e) {
+        e.preventDefault()
+        history.push("/Home");
+        //this.attr("href", "client/src/components/Home/Index.js");
+    }
     return (
         <React.Fragment>
             <Header />
@@ -48,17 +56,17 @@ function SignInNav() {
                         <h1 style = {{fontSize: "1.5rem", marginBottom: "10px"}}>Login</h1>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input style = {{height: "20%"}} type="name" class="form-control" id="username"/>
+                            <input style = {{height: "25px"}} type="name" class="form-control" id="username"/>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input style = {{height: "20%"}} type="password" class="form-control" id="password"/>
+                            <input style = {{height: "25px"}} type="password" class="form-control" id="password"/>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="savePassword"/>
                             <label class="form-check-label" for="savePassword">Remember me</label>
                         </div>
-                        <button style = {{ backgroundColor: "#4BB543", border : "none" }} type="submit" class="btn btn-primary">Log In</button>
+                        <button onClick = {logInOnClick} style = {{ backgroundColor: "#4BB543", border : "none" }} type="submit" class="btn btn-primary">Log In</button>
                     </form>
                 </div>
                 </div>
@@ -71,7 +79,7 @@ const loginStyle = {
     lineHeight: "1.5rem",
     fontFamily: 'Dosis, sans-serif',
     boxShadow: "3px 3px 10px",
-    borderRadius: "5px 20px",
+    borderRadius: "3px 20px",
     padding: "15px",
     backgroundColor: "whitesmoke",
     height: "fit-content"
@@ -82,7 +90,7 @@ const signUpStyle = {
     fontFamily: 'Dosis, sans-serif',
     boxShadow: "3px 3px 10px",
     fontSize: "1.2rem",
-    borderRadius: "5px 30px",
+    borderRadius: "4px 30px",
     padding: "35px",
     backgroundColor: "whitesmoke"
 }

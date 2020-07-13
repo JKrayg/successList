@@ -7,7 +7,7 @@ function FAQ() {
             <Header />
             <div style = {containerStyle} className = "container">
                     <div className = "row">
-                        <div style = {contactStyle} className = "col-md-8 offset-2">
+                        <div style = {faqStyle} className = "col-md-8 offset-2">
                             <h1 style = {{fontSize: "2rem", fontWeight: "bold", marginBottom: "10px"}}>FAQ</h1><hr/>
                             <div style = {questions} className = "questions">
                                 <h3 style = {{fontWeight: "bold", fontSize: "1.3rem", fontStyle: "italic"}}>How do I get started with my SuccessList accout?</h3>
@@ -42,9 +42,9 @@ const containerStyle = {
     marginTop: "40px"
 }
 
-const contactStyle = {
+const faqStyle = {
     padding: "20px",
-    borderRadius: "5px 30px",
+    borderRadius: "4px 30px",
     border: "1px solid #4BB543",
     boxShadow: "3px 3px 10px",
     lineHeight: "2em",

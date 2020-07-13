@@ -4,6 +4,7 @@ import LogIn from "./pages/LogIn";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import Home from "./pages/Home"
 
 export class App extends Component {
   render() {
@@ -14,6 +15,7 @@ export class App extends Component {
           <Route exact path = "/About" component={About} />
           <Route exact path = "/FAQ" component={FAQ} />
           <Route exact path = "/ContactUs" component = {Contact} />
+          <Route exact path = "/Home" component = {Home} />
         </Switch>
       </Router>
     )

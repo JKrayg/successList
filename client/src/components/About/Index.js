@@ -77,7 +77,7 @@ const containerStyle = {
 
 const storiesStyle = {
     border: "1px solid #4BB543",
-    borderRadius: "5px 30px",
+    borderRadius: "4px 30px",
     boxShadow: "3px 3px 10px",
     innerBorderRadius: "10px",
     padding: "10px",
