@@ -76,21 +76,21 @@ const containerStyle = {
 }
 
 const storiesStyle = {
-    border: "3px solid #4BB543",
-    borderRadius: "5px 30px 5px",
+    border: "1px solid #4BB543",
+    borderRadius: "5px 30px",
     boxShadow: "3px 3px 10px",
     innerBorderRadius: "10px",
     padding: "10px",
-    backgroundColor: "white",
+    backgroundColor: "whitesmoke",
     height: "fit-content"
 }
 
 const aboutStyle = {
-    padding: "20px",
-    borderRadius: "5px",
-    boxShadow: "3px 3px 10px",
+    padding: "0px 20px 20px 20px",
+    // borderRadius: "5px",
+    // boxShadow: "3px 3px 10px",
     lineHeight: "2em",
-    backgroundColor: "white",
+    // backgroundColor: "whitesmoke",
     fontFamily: 'Dosis, sans-serif',
     fontSize: "1.1rem"
 }

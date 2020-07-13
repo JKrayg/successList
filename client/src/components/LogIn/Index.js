@@ -7,23 +7,31 @@ function SignInNav() {
     return (
         <React.Fragment>
             <Header />
-            <Helmet bodyAttributes={{style: 'background-color : rgb(227, 227, 227)'}}/>
+            <Helmet bodyAttributes={{style: 'background-color : rgb(210, 210, 210)'}}/>
             <div style = {containerStyle} className = "container">
                 <div  className = "row">
                 <div style = {signUpStyle} className = "col-md-6 offset-3">
-                    <h1 style = {{fontSize: "2rem", marginBottom: "10px"}}>Sign Up</h1>
+                    <h1 style = {{fontSize: "2rem", marginBottom: "20px"}}>Sign Up</h1>
                     <form>
                         <div class="form-group">
-                            <label for="username">Username</label>
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Create a username</label>
                             <input type="name" class="form-control" id="username"/>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password"/>
                         </div>
+                        <div class="form-group">
+                            <label for="passwordConf">Confirm password</label>
+                            <input type="password" class="form-control" id="passwordConf"/>
+                        </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="savePassword"/>
-                            <label class="form-check-label" for="savePassword">Save password?</label>
+                            <label class="form-check-label" for="savePassword">Remember me</label>
                         </div>
                         <button style = {{backgroundColor: "#4BB543", border: "none"}} type="submit" class="btn btn-primary">Sign Up</button><br/>
                         <div style = {allIcons} className = "icons">
@@ -34,20 +42,21 @@ function SignInNav() {
                         </div>
                     </form>
                 </div>
-                <div style = {loginStyle} className = "col-md-2 offset-1">
-                    <h1 style = {{fontSize: "1.5rem", marginBottom: "10px"}}>Login</h1>
-                    <form>
+                <div  className = "col-md-2 offset-1">
+                    <h1 style = {{ fontFamily: 'Dosis, sans-serif',  fontSize: "1.1rem", marginBottom: "10px"}}>Already a member?</h1>
+                    <form style = {loginStyle}>
+                        <h1 style = {{fontSize: "1.5rem", marginBottom: "10px"}}>Login</h1>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="name" class="form-control" id="username"/>
+                            <input style = {{height: "20%"}} type="name" class="form-control" id="username"/>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password"/>
+                            <input style = {{height: "20%"}} type="password" class="form-control" id="password"/>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="savePassword"/>
-                            <label class="form-check-label" for="savePassword">Save password?</label>
+                            <label class="form-check-label" for="savePassword">Remember me</label>
                         </div>
                         <button style = {{ backgroundColor: "#4BB543", border : "none" }} type="submit" class="btn btn-primary">Log In</button>
                     </form>
@@ -62,9 +71,9 @@ const loginStyle = {
     lineHeight: "1.5rem",
     fontFamily: 'Dosis, sans-serif',
     boxShadow: "3px 3px 10px",
-    borderRadius: "5px",
+    borderRadius: "5px 20px",
     padding: "15px",
-    backgroundColor: "white",
+    backgroundColor: "whitesmoke",
     height: "fit-content"
 }
 
@@ -73,9 +82,9 @@ const signUpStyle = {
     fontFamily: 'Dosis, sans-serif',
     boxShadow: "3px 3px 10px",
     fontSize: "1.2rem",
-    borderRadius: "5px",
+    borderRadius: "5px 30px",
     padding: "35px",
-    backgroundColor: "white"
+    backgroundColor: "whitesmoke"
 }
 
 const containerStyle = {

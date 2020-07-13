@@ -36,7 +36,8 @@ function Header() {
 }
 
 const headerStyle = {
-    borderBottom: ".2px solid black",
+    //borderBottom: ".2px solid black",
+    boxShadow: "2px 2px 10px",
     padding: "10px",
     backgroundColor: "#4BB543"
 }

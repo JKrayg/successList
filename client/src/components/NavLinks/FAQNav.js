@@ -13,7 +13,8 @@ function FAQNav() {
 
 const linkStyle = {
     float: "right",
-    fontFamily: 'Dosis, sans-serif'
+    fontFamily: 'Dosis, sans-serif',
+    color: "rgba(255, 217, 0, 0.845)"
 }
 
 export default FAQNav;
