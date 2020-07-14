@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SignInNav from "../components/LogIn/Index"
 
-export class LogIn extends Component {
+export class LogInPage extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ export class LogIn extends Component {
     }
 }
 
-export default LogIn;
+export default LogInPage;

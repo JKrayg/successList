@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import moment from "moment";
 import "./Home.css"
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const now = moment();
@@ -62,8 +63,8 @@ function Home() {
                         <h1>{ months[date.getMonth()] }</h1>
                     </div>
                     <div style = {addLinks} className = "col-md-4 offset-6">
-                        <a style = {{ float: "right"}} href = "#">+ Add Bad Habit</a>
-                        <a style = {{ marginRight: "20px", float: "right"}} href = "#">+ Add Goal</a>
+                        <Link to = "/badHabit" style = {{ float: "right"}} href = "#">+ Add Bad Habit</Link>
+                        <Link to = "/Goal" style = {{ marginRight: "20px", float: "right"}} href = "#">+ Add Goal </Link>
                     </div>
                 </div>
                 <div style = {listedCalendarStyle} className = "row listedCal">

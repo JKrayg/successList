@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import HomePage from "../components/Home/Index"
+import Home from "../components/Home/Index"
 
-export class Home extends Component {
+export class HomePage extends Component {
     render() {
         return (
             <div>
-                <HomePage />
+                <Home />
             </div>
         )
     }
 }
 
-export default Home;
+export default HomePage;
