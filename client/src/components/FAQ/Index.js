@@ -10,7 +10,7 @@ function FAQ() {
                         <div style = {faqStyle} className = "col-md-8 offset-2">
                             <h1 style = {{fontSize: "2rem", fontWeight: "bold", marginBottom: "10px"}}>FAQ</h1><hr/>
                             <div style = {questions} className = "questions">
-                                <h3 style = {{fontWeight: "bold", fontSize: "1.3rem", fontStyle: "italic"}}>How do I get started with my SuccessList accout?</h3>
+                                <h3 style = {{fontWeight: "bold", fontSize: "1.3rem", fontStyle: "italic"}}>How do I get started with my SuccessList calendar?</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                     sed do eiusmod tempor incididunt ut labore et dolore magna 
                                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
