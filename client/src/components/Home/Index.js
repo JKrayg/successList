@@ -6,16 +6,15 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Home() {
     const now = moment();
-    //var monthDays = now.daysInMonth()
+    var monthDays = now.daysInMonth()
     //var days = moment.weekdays()
     var arrDays = [];
     var date = new Date;
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    //var daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"]
+    //var daysArr = ["Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday"]
 
     for (var i = 0; i < 8; i++) {
-        var dd = date.getDate("DD");
-        
+        var dd = date.getDate();
         date.setDate(date.getDate() + 1);
         arrDays.push(dd)
         console.log(date)
@@ -82,6 +81,7 @@ function Home() {
 const listedCalendarStyle = {
     border: "1px solid black",
     marginTop: "10px",
+    marginBottom: "50px",
     padding: "20px",
     height: "700px",
     overflow: "auto",
