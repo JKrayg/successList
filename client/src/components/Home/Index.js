@@ -6,20 +6,27 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Home() {
     const now = moment();
-    var monthDays = now.daysInMonth()
+    var monthDays = now.date()
+    console.log(monthDays)
     //var days = moment.weekdays()
     var arrDays = [];
     var date = new Date;
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     //var daysArr = ["Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday"]
 
-    for (var i = 0; i < 8; i++) {
-        var dd = date.getDate();
-        date.setDate(date.getDate() + 1);
-        arrDays.push(dd)
-        console.log(date)
+    // for (var i = 0; i < 8; i++) {
+    //     var dd = date.getDate();
+    //     date.setDate(dd + 1);
+    //     arrDays.push(dd)
+    //     console.log(date)
 
+    // }
+    
+    for (var i = 0; i < 8; i++) {
+        monthDays = monthDays + 1;
+        arrDays.push(monthDays);
     }
+
 
     // monthDays = monthDays + 1;
     // for (var i = 0; i < monthDays; i++) {
@@ -46,7 +53,7 @@ function Home() {
                     <div className = "col-md-3 offset-5">
                         <div className ="form-group">
                             <label style = {{ fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", float: "right", color: "rgba(255, 217, 0, 0.845)" }} htmlFor="search">🔎 Search Date</label>
-                            <input style = {{ fontFamily: 'Dosis, sans-serif', height: "25px", width: "58%", float: "right", marginTop: "10px", borderRadius: "20px"}} type="date" className ="form-control" id="search"/>
+                            <input style = {{ fontFamily: 'Dosis, sans-serif', height: "25px", width: "65%", float: "right", marginTop: "10px", borderRadius: "20px"}} type="date" className ="form-control" id="search"/>
                         </div>
                     </div>
                 </div>
@@ -82,7 +89,7 @@ const listedCalendarStyle = {
     border: "1px solid black",
     marginTop: "10px",
     marginBottom: "50px",
-    padding: "20px",
+    padding: "20px 60px",
     height: "700px",
     overflow: "auto",
     backgroundColor: "rgb(210, 210, 210)",
@@ -104,7 +111,7 @@ const addLinks = {
 const calListStyle = {
     border: "1px solid black",
     borderRadius: "5px",
-    height: "100px",
+    height: "150px",
     marginBottom: "30px",
     backgroundColor: "white"
 }
