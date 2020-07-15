@@ -7,11 +7,12 @@ import { useHistory } from "react-router-dom";
 
 function SignInNav() {
     const history = useHistory();
+
     function logInOnClick(e) {
         e.preventDefault()
         history.push("/Home");
-        //this.attr("href", "client/src/components/Home/Index.js");
     }
+
     return (
         <React.Fragment>
             <Header />

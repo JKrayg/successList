@@ -9,13 +9,11 @@ const checkList = new Schema({
     },
 
     type: {
-        type: String,
-        require: true
+        type: String
     },
 
     checked: {
-        type: Boolean,
-        require: true
+        type: Boolean
     },
 
     date: { 
