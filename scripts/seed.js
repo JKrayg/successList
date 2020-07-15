@@ -13,7 +13,7 @@ const checklistSeed = {
 };
 
 db.List.remove({})
-.then(() => db.List.collection.insertMany(checklistSeed))
+.then(() => db.List.insertMany(checklistSeed))
 .then(data => {
     console.log(data);
     process.exit(0)

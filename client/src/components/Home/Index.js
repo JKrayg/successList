@@ -11,7 +11,7 @@ function Home() {
     console.log(monthDays)
     //var days = moment.weekdays()
     var arrDays = [];
-    var date = new Date;
+    var date = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     //var daysArr = ["Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday"]
 
@@ -23,10 +23,10 @@ function Home() {
 
     // }
     
-    for (var i = 0; i < 8; i++) {
-        monthDays = monthDays + 1;
-        arrDays.push(monthDays);
-    }
+    // for (var i = 0; i < 8; i++) {
+    //     monthDays = monthDays + 1;
+    //     arrDays.push(monthDays);
+    // }
 
 
     // monthDays = monthDays + 1;
@@ -53,7 +53,7 @@ function Home() {
                     </div>
                     <div className = "col-md-3 offset-5">
                         <div className ="form-group">
-                            <label style = {{ fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", float: "right", color: "rgba(255, 217, 0, 0.845)" }} htmlFor="search">🔎 Search Date</label>
+                            <label style = {{ fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", float: "right", color: "rgba(255, 217, 0, 0.845)" }} htmlFor="search"><span role = "img" aria-label = "magnifying-glass">🔎</span> Search Date</label>
                             <input style = {{ fontFamily: 'Dosis, sans-serif', height: "25px", width: "65%", float: "right", marginTop: "10px", borderRadius: "20px"}} type="date" className ="form-control" id="search"/>
                         </div>
                     </div>
@@ -69,16 +69,16 @@ function Home() {
                 </div>
                 <div style = {listedCalendarStyle} className = "row listedCal">
                     <div className = "col-md-12 listedCalendar">
-                    {arrDays.map(dayNum => (
+                    {/* //{arrDays.map(dayNum => ( */}
                         <div key = { uuidv4() } className = "calList">
                             <div className = "row">
-                                <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ dayNum }</h1>
+                                <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ monthDays }</h1>
                                 <div style = {calListStyle} className = "col-md-12">
 
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    {/* ))} */}
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ const listedCalendarStyle = {
     marginTop: "10px",
     marginBottom: "50px",
     padding: "20px 60px",
-    height: "700px",
+    height: "fit-content",
     overflow: "auto",
     backgroundColor: "rgb(210, 210, 210)",
     borderRadius: "5px"
@@ -112,7 +112,7 @@ const addLinks = {
 const calListStyle = {
     border: "1px solid black",
     borderRadius: "5px",
-    height: "150px",
+    height: "200px",
     marginBottom: "30px",
     backgroundColor: "white"
 }
