@@ -5,7 +5,7 @@ import API from "../util/API"
 export class GoalPage extends Component {
 
     state = {
-        goalList: [],
+        goalsList: [],
         goal: ""
     }
 
@@ -16,7 +16,7 @@ export class GoalPage extends Component {
       loadGoals = () => {
         API.getGoals()
           .then(res =>
-            this.setState({ goalList: res.data , goal: "" })
+            this.setState({ goalsList: res.data, goal: "" })
           )
           .catch(err => console.log(err));
       };
