@@ -6,7 +6,6 @@ import FAQPage from "./pages/FAQ";
 import ContactPage from "./pages/Contact";
 import HomePage from "./pages/Home";
 import BadHabitPage from "./pages/BadHabit";
-import GoalPage from "./pages/Goal";
 
 export class App extends Component {
   render() {
@@ -19,7 +18,6 @@ export class App extends Component {
           <Route exact path = "/ContactUs" component = {ContactPage} />
           <Route exact path = "/Home" component = {HomePage} />
           <Route exact path = "/BadHabit" component = {BadHabitPage} />
-          <Route exact path = "/Goal" component = {GoalPage} />
         </Switch>
       </Router>
     )
