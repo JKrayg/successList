@@ -13,7 +13,8 @@ const checkList = new Schema({
     },
 
     checked: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
 
     date: { 

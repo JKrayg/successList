@@ -1,42 +1,22 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import moment from "moment";
+//import DeleteButton from "../DeleteButton/Index"
 import "./Home.css"
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function Home(props) {
     const now = moment();
     var monthDays = now.date()
-    console.log(monthDays)
+    //console.log(monthDays)
     //var days = moment.weekdays()
     var arrDays = [];
     var date = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    //var daysArr = ["Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday"]
-
-    // for (var i = 0; i < 8; i++) {
-    //     var dd = date.getDate();
-    //     date.setDate(dd + 1);
-    //     arrDays.push(dd)
-    //     console.log(date)
-
-    // }
     
-    // for (var i = 0; i < 8; i++) {
-    //     monthDays = monthDays + 1;
-    //     arrDays.push(monthDays);
-    // }
-
-
-    // monthDays = monthDays + 1;
-    // for (var i = 0; i < monthDays; i++) {
-    //     while (monthDays >= 2) {
-    //         monthDays --;
-    //         arrDays.push(monthDays);
-    //     }
-    // }
-
+    //var currentTime = moment().format("h:mm a")
+    
     arrDays.sort(function(a, b){
         return a-b
     });
@@ -51,7 +31,10 @@ function Home() {
                         <img alt = "calendar-img" style = {{height: "45px", width: "45px", float: "left"}} src = "https://i1.wp.com/nascompares.com/wp-content/uploads/2018/08/Synology-Calendar-logo.png?fit=256%2C256&ssl=1" />
                         <a style = {{color: "white", fontFamily: 'Dosis, sans-serif', fontSize: "2rem", marginLeft: "10px" }} href = "#">Calendar View</a>
                     </div>
-                    <div className = "col-md-3 offset-5">
+                    <div className = "col-md-4">
+                        <h1 style = {{textAlign: "center"}}>{ props.clock } </h1>
+                    </div>
+                    <div className = "col-md-4 offset-">
                         <div className ="form-group">
                             <label style = {{ fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", float: "right", color: "rgba(255, 217, 0, 0.845)" }} htmlFor="search"><span role = "img" aria-label = "magnifying-glass">🔎</span> Search Date</label>
                             <input style = {{ fontFamily: 'Dosis, sans-serif', height: "25px", width: "65%", float: "right", marginTop: "10px", borderRadius: "20px"}} type="date" className ="form-control" id="search"/>
@@ -74,7 +57,22 @@ function Home() {
                             <div className = "row">
                                 <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ monthDays }</h1>
                                 <div style = {calListStyle} className = "col-md-12">
-
+                                    <div className = "row">
+                                        <div className = "col-md-12">
+                                            {props.goal.map(results => (
+                                                <div key = {results._id} style = { checkStyle } className="form-check">
+                                                    <input style = {{marginRight: "5px"}} className="form-check-input position-static" type="checkbox" id="goalCheckbox" value = {results.description} aria-label="..." />
+                                                    {results.description}
+                                                    <div>
+                                                        <button onClick={() => props.handleDelete(results)} style = { deleteStyle }>Delete</button>
+                                                    </div>
+                                                </div>
+                                                // console.log(results.data),
+                                                // <div  className = "goals">{results.description}</div>
+                                            ))}
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +110,28 @@ const addLinks = {
 const calListStyle = {
     border: "1px solid black",
     borderRadius: "5px",
-    height: "200px",
+    height: "fit-content",
     marginBottom: "30px",
     backgroundColor: "white"
 }
+
+const checkStyle = {
+    float: "left",
+    padding: "10px 20px",
+    fontFamily: 'Dosis, sans-serif',
+    width: "fit-content"
+}
+
+const deleteStyle = {
+    //     backgroundColor: "#ff0000",
+    //     color: "#fff",
+    //     border: "none",
+    //     padding: "5px",
+    //     borderRadius: "70px",
+    //     cursor: "pointer",
+    //     //height: "20px",
+    //     width: "40px",
+        float: "left",
+    //     textAlign: "center"
+     }
 export default Home;
