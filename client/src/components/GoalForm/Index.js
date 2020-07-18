@@ -9,7 +9,7 @@ function GoalForm(props)  {
                             <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "3rem", marginBottom: "15px"}}>Goal</h1>
                             <div className="form-group">
                                 <textarea
-                                style = {{ border: "5px solid #4BB543"}}
+                                style = {{ border: "5px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}
                                 type="text"
                                 className="form-control"
                                 id="exampleInputPassword1"
