@@ -58,19 +58,24 @@ function Home(props) {
                                 <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ monthDays }</h1>
                                 <div style = {calListStyle} className = "col-md-12">
                                     <div className = "row">
-                                        <div className = "col-md-12">
-                                            {props.goal.map(results => (
-                                                <div key = {results._id} style = { checkStyle } className="form-check">
-                                                    <input style = {{marginRight: "5px"}} className="form-check-input position-static" type="checkbox" id="goalCheckbox" value = {results.description} aria-label="..." />
-                                                    {results.description}
-                                                    <div>
-                                                        <button onClick={() => props.handleDelete(results)} style = { deleteStyle }>Delete</button>
+                                        <div style = {allGoals} className = "col-md-12 allGoals">
+                                            <div className = "row">
+                                                {props.goal.map(results => (
+                                                    <div key = {results._id} className = "col-md-2">
+                                                        <div style = { checkStyle } className="form-check">
+                                                            <input style = {{marginRight: "5px"}} className="form-check-input position-static" type="checkbox" id="goalCheckbox" value = {results.description} aria-label="..." />
+                                                            <label className="form-check-label" htmlFor="goalCheckbox">
+                                                                {results.description}
+                                                            </label>
+                                                            <div>
+                                                                <button onClick={() => props.handleDelete(results)} style = { deleteStyle }>delete</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                // console.log(results.data),
-                                                // <div  className = "goals">{results.description}</div>
-                                            ))}
-                                            
+                                                ))}
+                                                        
+                                            </div>
+                                                    
                                         </div>
                                     </div>
                                 </div>
@@ -112,26 +117,26 @@ const calListStyle = {
     borderRadius: "5px",
     height: "fit-content",
     marginBottom: "30px",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    padding: "5px 15px"
 }
 
 const checkStyle = {
-    float: "left",
-    padding: "10px 20px",
+    //float: "left",
+    margin: "10px 15px",
     fontFamily: 'Dosis, sans-serif',
-    width: "fit-content"
+    padding: "0",
+    //display: "inline-block"
 }
 
 const deleteStyle = {
-    //     backgroundColor: "#ff0000",
-    //     color: "#fff",
-    //     border: "none",
-    //     padding: "5px",
-    //     borderRadius: "70px",
-    //     cursor: "pointer",
-    //     //height: "20px",
-    //     width: "40px",
-        float: "left",
-    //     textAlign: "center"
-     }
+    backgroundColor: "white",
+    border: "none",
+    color: "#007bff",
+    marginTop: "5px"
+}
+
+const allGoals = {
+    float: "left"
+}
 export default Home;
