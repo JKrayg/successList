@@ -24,6 +24,15 @@ export class HomePage extends Component {
                 //console.log(this.state.goalsList)
               
         };
+
+        handleValue = event => {
+            const value  = event.target.value;
+            API.saveGoal({
+                description: value
+            })
+            .then(res => this.loadGoals())
+            .catch(err => console.log(err))
+        };
     
         handleChange = event => {
             const { name, value } = event.target;
@@ -63,7 +72,7 @@ export class HomePage extends Component {
         return (
             <div>
                 <Home goal = {this.state.goalsList } clock = {this.state.currentTime} handleDelete = {this.handleDelete}/>
-                <GoalForm handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
+                <GoalForm handleValue = {this.handleValue} handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
             </div>
         )
     }
