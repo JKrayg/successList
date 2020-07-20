@@ -73,9 +73,7 @@ function Home(props) {
                                                         </div>
                                                     </div>
                                                 ))}
-                                                        
                                             </div>
-                                                    
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +95,8 @@ const listedCalendarStyle = {
     height: "fit-content",
     overflow: "auto",
     backgroundColor: "rgb(210, 210, 210)",
-    borderRadius: "5px"
+    borderRadius: "5px",
+    boxShadow: "3px 3px 10px",
 }
 
 const monthAndLinks = {
@@ -132,7 +131,7 @@ const checkStyle = {
 const deleteStyle = {
     backgroundColor: "white",
     border: "none",
-    color: "#007bff",
+    color: "red",
     marginTop: "5px"
 }
 
