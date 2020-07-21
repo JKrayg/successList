@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import Home from "../components/Home/Index"
 import GoalForm from "../components/GoalForm/Index"
+import HomeHeader from "../components/Header/HomeHeader"
 import API from "../util/API"
+//import { update } from '../../../models/checkList'
 
 export class HomePage extends Component {
         state = {
             goalsList: [],
             goal: "",
-            clock: ""
+            clock: "",
+            checked: false
         }
     
         componentDidMount = () => {
@@ -24,6 +27,56 @@ export class HomePage extends Component {
                 //console.log(this.state.goalsList)
               
         };
+
+        handleCheck = event => {
+            const ID = event.target.id
+            
+            this.setState({
+                checked: !this.state.checked
+            })
+            console.log(this.state.checked)
+            API.updateGoal(ID, {
+                checked: this.state.checked
+            })
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        
+            
+            // API.updateGoal(ID{
+
+            // }) 
+
+            
+            // .then(res => )
+            // .catch(err => console.log(err))
+            //     _id: id
+            // },
+            // {
+            //     checked: !this.checked
+            
+            // .then(res => this.loadGoals())
+            // .catch(err => console.log(err));
+            // .then(res => {
+            //     if (res._id === value) {
+            //         res.checked = !res.checked
+            //     }
+            // })
+            // console.log(value, isChecked);
+        }
+
+        // handleCheck = (event) => {
+        //     // this.setState({ goalsList: this.state.goalsList.filter(goalz => {
+        //     //   if(goalz._id === event.target.value) {
+        //     //       console.log(goalz._id)
+        //     API.updateGoal({
+        //         checked: !event.target.value
+        //     })
+        //     .then(res => this.loadGoals())
+        //     .catch(err => console.log(err));
+        // }
+              
+            // }) });
+    // }
 
         handleValue = event => {
             const value  = event.target.value;
@@ -71,8 +124,13 @@ export class HomePage extends Component {
         //setInterval(currentTime, 1000);
         return (
             <div>
-                <Home goal = {this.state.goalsList } clock = {this.state.currentTime} handleDelete = {this.handleDelete}/>
-                <GoalForm handleValue = {this.handleValue} handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
+                <div className = "container">
+                    <HomeHeader clock = {this.state.currentTime}/>
+                    <GoalForm handleValue = {this.handleValue} handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
+                    <Home goal = {this.state.goalsList } handleDelete = {this.handleDelete} handleCheck = {this.handleCheck}/>
+                </div>
+                
+                
             </div>
         )
     }

@@ -7,6 +7,9 @@ export default {
   getGoal: function(id) {
     return axios.get("/api/goals/" + id).then(result => result.data);
   },
+  updateGoal: function(id) {
+    return axios.put("/api/goals/" + id).then(result => result.data);
+  },
   saveGoal: function (goalData) {
     return axios.post("/api/goals", goalData).then(result => result.data);
   },
