@@ -7,7 +7,7 @@ function GoalForm(props)  {
                 <div className = "container">
                     <div className = "row">
                         <div style = {mainCon} className = "col-md-8">
-                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "3rem", marginBottom: "15px"}}>Goal</h1>
+                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "2.5rem", marginBottom: "15px"}}>Goal</h1>
                             <div className="form-group">
                                 <textarea
                                 style = {{ border: "3px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}
@@ -44,7 +44,8 @@ const mainCon = {
     borderRadius: "5px 20px",
     boxShadow: "3px 3px 10px",
     marginTop: "30px",
-    padding: "20px 60px",
+    padding: "20px 20px",
+    height: "fit-content",
     backgroundColor: "rgb(210, 210, 210)"
 }
 

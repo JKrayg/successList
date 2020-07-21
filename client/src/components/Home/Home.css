@@ -7,6 +7,6 @@
     position: absolute!important;
 }
 
-/* .position-static {
-    position: unset;
-} */
+.delBtn:focus {
+    outline: none;
+}

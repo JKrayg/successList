@@ -5,6 +5,7 @@ import moment from "moment";
 import "./Home.css"
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import app from '../../firebase';
 
 function Home(props) {
     const now = moment();
@@ -25,22 +26,6 @@ function Home(props) {
     return (
         <React.Fragment>
             <Helmet bodyAttributes={{style: 'background-color : #4BB543'}}/>
-            <div className = "container">
-                <div style = {{marginTop: "20px"}} className = "row">
-                    <div className = "col-md-4">
-                        <img alt = "calendar-img" style = {{height: "45px", width: "45px", float: "left"}} src = "https://i1.wp.com/nascompares.com/wp-content/uploads/2018/08/Synology-Calendar-logo.png?fit=256%2C256&ssl=1" />
-                        <a style = {{color: "white", fontFamily: 'Dosis, sans-serif', fontSize: "2rem", marginLeft: "10px" }} href = "#">Calendar View</a>
-                    </div>
-                    <div className = "col-md-4">
-                        <h1 style = {{textAlign: "center"}}>{ props.clock } </h1>
-                    </div>
-                    <div className = "col-md-4 offset-">
-                        <div className ="form-group">
-                            <label style = {{ fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", float: "right", color: "rgba(255, 217, 0, 0.845)" }} htmlFor="search"><span role = "img" aria-label = "magnifying-glass">🔎</span> Search Date</label>
-                            <input style = {{ fontFamily: 'Dosis, sans-serif', height: "25px", width: "65%", float: "right", marginTop: "10px", borderRadius: "20px"}} type="date" className ="form-control" id="search"/>
-                        </div>
-                    </div>
-                </div>
                 <div className = "row">
                     <div style = {monthAndLinks} className = "col-md-2">
                         <h1>{ months[date.getMonth()] }</h1>
@@ -52,7 +37,6 @@ function Home(props) {
                 </div>
                 <div style = {listedCalendarStyle} className = "row listedCal">
                     <div className = "col-md-12 listedCalendar">
-                    {/* //{arrDays.map(dayNum => ( */}
                         <div key = { uuidv4() } className = "calList">
                             <div className = "row">
                                 <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ monthDays }</h1>
@@ -63,12 +47,12 @@ function Home(props) {
                                                 {props.goal.map(results => (
                                                     <div key = {results._id} className = "col-md-2">
                                                         <div style = { checkStyle } className="form-check">
-                                                            <input style = {{marginRight: "5px"}} className="form-check-input position-static" type="checkbox" id="goalCheckbox" value = {results.description} aria-label="..." />
+                                                            <input id = {results._id} onChange = {props.handleCheck} style = {{marginRight: "5px"}} data-toggle = {results.checked} className="form-check-input position-static" type="checkbox" aria-label="..." />
                                                             <label className="form-check-label" htmlFor="goalCheckbox">
                                                                 {results.description}
                                                             </label>
                                                             <div>
-                                                                <button onClick={() => props.handleDelete(results)} style = { deleteStyle }>delete</button>
+                                                                <button className = "delBtn" onClick={() => props.handleDelete(results)} style = { deleteStyle }>delete</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -79,10 +63,9 @@ function Home(props) {
                                 </div>
                             </div>
                         </div>
-                    {/* ))} */}
                     </div>
                 </div>
-            </div>
+                <button onClick = {() => app.auth().signOut()}>Sign Out</button>
         </React.Fragment>
     )
 }
