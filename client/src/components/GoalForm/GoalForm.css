@@ -1,3 +1,7 @@
 .sugBttns:focus {
     outline: none;
 }
+
+.signOutBtn:focus {
+    outline: none;
+}

@@ -5,7 +5,6 @@ import moment from "moment";
 import "./Home.css"
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-import app from '../../firebase';
 
 function Home(props) {
     const now = moment();
@@ -31,8 +30,8 @@ function Home(props) {
                         <h1>{ months[date.getMonth()] }</h1>
                     </div>
                     <div style = {addLinks} className = "col-md-4 offset-6">
-                        <Link to = "/badHabit" style = {{ float: "right"}} href = "#">+ Add Bad Habit</Link>
-                        <Link to = "/Goal" style = {{ marginRight: "20px", float: "right"}} href = "#">+ Add Goal </Link>
+                        <Link to = "/badHabit" style = {{ float: "right", textDecoration: "none"}} href = "#">+ Add Habit</Link>
+                        <Link to = "/Goal" style = {{ marginRight: "20px", float: "right", textDecoration: "none"}} href = "#">+ Add Goal </Link>
                     </div>
                 </div>
                 <div style = {listedCalendarStyle} className = "row listedCal">
@@ -45,15 +44,13 @@ function Home(props) {
                                         <div style = {allGoals} className = "col-md-12 allGoals">
                                             <div className = "row">
                                                 {props.goal.map(results => (
-                                                    <div key = {results._id} className = "col-md-2">
+                                                    <div key = {results._id} id = {results._id} className = "col-md-2">
                                                         <div style = { checkStyle } className="form-check">
                                                             <input id = {results._id} onChange = {props.handleCheck} style = {{marginRight: "5px"}} data-toggle = {results.checked} className="form-check-input position-static" type="checkbox" aria-label="..." />
                                                             <label className="form-check-label" htmlFor="goalCheckbox">
                                                                 {results.description}
                                                             </label>
-                                                            <div>
-                                                                <button className = "delBtn" onClick={() => props.handleDelete(results)} style = { deleteStyle }>delete</button>
-                                                            </div>
+                                                            <button className = "delBtn" onClick={() => props.handleDelete(results)} style = { deleteStyle }>x</button>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -65,7 +62,6 @@ function Home(props) {
                         </div>
                     </div>
                 </div>
-                <button onClick = {() => app.auth().signOut()}>Sign Out</button>
         </React.Fragment>
     )
 }
@@ -100,14 +96,15 @@ const calListStyle = {
     height: "fit-content",
     marginBottom: "30px",
     backgroundColor: "white",
-    padding: "5px 15px"
+    padding: "15px 30px"
 }
 
 const checkStyle = {
     //float: "left",
-    margin: "10px 15px",
     fontFamily: 'Dosis, sans-serif',
     padding: "0",
+    marginBottom: "30px",
+    width: "fit-content"
     //display: "inline-block"
 }
 
@@ -115,7 +112,7 @@ const deleteStyle = {
     backgroundColor: "white",
     border: "none",
     color: "red",
-    marginTop: "5px"
+    marginLeft: "5px"
 }
 
 const allGoals = {

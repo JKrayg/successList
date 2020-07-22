@@ -28,18 +28,18 @@ export class HomePage extends Component {
               
         };
 
-        handleCheck = event => {
-            const ID = event.target.id
+        // handleCheck = event => {
+        //     const ID = event.target.id
             
-            this.setState({
-                checked: !this.state.checked
-            })
-            console.log(this.state.checked)
-            API.updateGoal(ID, {
-                checked: this.state.checked
-            })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        //     this.setState({
+        //         checked: !this.state.checked
+        //     })
+        //     console.log(this.state.checked)
+        //     API.updateGoal(ID, {
+        //         checked: this.state.checked
+        //     })
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err))
         
             
             // API.updateGoal(ID{
@@ -62,7 +62,7 @@ export class HomePage extends Component {
             //     }
             // })
             // console.log(value, isChecked);
-        }
+        //}
 
         // handleCheck = (event) => {
         //     // this.setState({ goalsList: this.state.goalsList.filter(goalz => {
