@@ -5,9 +5,8 @@ router.route("/")
 .get(checkListController.findAll)
 .post(checkListController.create)
 
-router
-  .route("/:id")
-  .get(checkListController.findById)
-  .put(checkListController.update)
-  .delete(checkListController.remove)
+router.route("/:id")
+.get(checkListController.findById)
+.put(checkListController.update)
+.delete(checkListController.remove)
 module.exports = router;
