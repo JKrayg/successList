@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import Home from "../components/Home/Index"
-import GoalForm from "../components/GoalForm/Index"
-import HomeHeader from "../components/Header/HomeHeader"
-import API from "../util/API"
+import React, { Component } from 'react';
+import Home from "../components/Home/Index";
+import GoalForm from "../components/GoalForm/Index";
+import HomeHeader from "../components/Header/HomeHeader";
+import API from "../util/API";
+//import moment from "moment";
 //import { update } from '../../../models/checkList'
 
 export class HomePage extends Component {
@@ -27,6 +28,27 @@ export class HomePage extends Component {
                 //console.log(this.state.goalsList)
               
         };
+
+        
+
+    // useEffect(() => {
+    //     const [seconds, setSeconds] = useState(0);
+    //     const now = moment();
+    //     const time = now.format("hh:mm");
+    //     const interval = setInterval(() => {
+    //     setSeconds(seconds => seconds + 1);
+    //     }, 1000);
+    //     return () => clearInterval(interval);
+    // }, [time]);
+
+
+  
+        
+        // const now = moment();
+        // let time = now.format("hh:mm")    
+                
+        
+  
 
         // handleCheck = event => {
         //     const ID = event.target.id
@@ -127,7 +149,7 @@ export class HomePage extends Component {
                 <div className = "container">
                     <HomeHeader clock = {this.state.currentTime}/>
                     <GoalForm handleValue = {this.handleValue} handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
-                    <Home goal = {this.state.goalsList } handleDelete = {this.handleDelete} handleCheck = {this.handleCheck}/>
+                    <Home goal = {this.state.goalsList } handleDelete = {this.handleDelete} handleCheck = {this.handleCheck} clock = {this.state.clock}/>
                 </div>
                 
                 

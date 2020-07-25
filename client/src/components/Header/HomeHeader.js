@@ -1,13 +1,15 @@
 import React from 'react'
 import "./HomeHead.css"
+import app from '../../firebase';
 
 function HomeHeader(props) {
     return (
         <div>
             <div style = {{marginTop: "20px"}} className = "row">
-                    <div className = "col-md-4">
-                        <img alt = "calendar-img" style = {{height: "45px", width: "45px", float: "left"}} src = "https://i1.wp.com/nascompares.com/wp-content/uploads/2018/08/Synology-Calendar-logo.png?fit=256%2C256&ssl=1" />
-                        <a style = {{color: "white", fontFamily: 'Dosis, sans-serif', fontSize: "2rem", marginLeft: "10px" }} href = "#">Calendar View</a>
+                    <div style = {{height: "fit-content"}}className = "col-md-4">
+                        <img alt = "calendar-img" style = {{height: "30px", width: "30px", float: "left"}} src = "https://i1.wp.com/nascompares.com/wp-content/uploads/2018/08/Synology-Calendar-logo.png?fit=256%2C256&ssl=1" />
+                        <a style = {{color: "white", fontFamily: 'Dosis, sans-serif', fontSize: "1.5rem", marginLeft: "10px" }} href = "#">Calendar View</a><br/>
+                        <button className = "signOutBtn" style = {signOutStyle} onClick = {() => app.auth().signOut()}>Sign Out</button>
                     </div>
                     <div className = "col-md-4">
                         <h1 style = {{textAlign: "center"}}>{ props.clock } </h1>
@@ -21,5 +23,15 @@ function HomeHeader(props) {
                 </div>
         </div>
     )
+}
+
+const signOutStyle = {
+    padding: "5px",
+    backgroundColor: "#4BB543",
+    border: "none",
+    color: "rgba(255, 217, 0, 0.845)",
+    fontFamily: 'Dosis, sans-serif',
+    marginLeft: "5px"
+    //float: "right"
 }
 export default HomeHeader;
