@@ -31,7 +31,8 @@ const signOutStyle = {
     border: "none",
     color: "rgba(255, 217, 0, 0.845)",
     fontFamily: 'Dosis, sans-serif',
-    marginLeft: "5px"
+    marginLeft: "5px",
+    marginTop: "5px"
     //float: "right"
 }
 export default HomeHeader;
