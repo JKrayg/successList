@@ -3,7 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import app from "../../firebase";
 import { AuthContext } from "../../Auth";
 
-const Login = ({ history }) => {
+const LoginForm = ({ history }) => {
     const handleLogin = useCallback(
         async event => {
             event.preventDefault();
@@ -61,4 +61,4 @@ const loginStyle = {
     height: "fit-content"
 }
 
-export default withRouter(Login);
+export default withRouter(LoginForm);
