@@ -1,25 +1,35 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import moment from "moment";
+//import Clock from "../Clock/Index"
 //import DeleteButton from "../DeleteButton/Index"
 import "./Home.css"
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-
 function Home(props) {
     const now = moment();
-    var monthDays = now.date()
-    //console.log(monthDays)
-    //var days = moment.weekdays()
-    var arrDays = [];
+    let monthDays = now.date()
+    var allDays = [];
+    //var arrDays = [];
     var date = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
     //var currentTime = moment().format("h:mm a")
+    allDays.push(monthDays);
+    for (var i = 0; i < 7; i++) {
+        if(monthDays < 31) {
+            monthDays = monthDays + 1;
+            allDays.push(monthDays); 
+        }
+        
+
+    }
     
-    arrDays.sort(function(a, b){
-        return a-b
-    });
+    // arrDays.sort(function(a, b){
+    //     return a-b
+    // });
+
+
     
     
     return (
@@ -36,30 +46,32 @@ function Home(props) {
                 </div>
                 <div style = {listedCalendarStyle} className = "row listedCal">
                     <div className = "col-md-12 listedCalendar">
-                        <div key = { uuidv4() } className = "calList">
-                            <div className = "row">
-                                <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ monthDays }</h1>
-                                <div style = {calListStyle} className = "col-md-12">
-                                    <div className = "row">
-                                        <div style = {allGoals} className = "col-md-12 allGoals">
-                                            <div className = "row">
-                                                {props.goal.map(results => (
-                                                    <div key = {results._id} id = {results._id} className = "col-md-2">
-                                                        <div style = { checkStyle } className="form-check">
-                                                            <input id = {results._id} onChange = {props.handleCheck} style = {{marginRight: "5px"}} data-toggle = {results.checked} className="form-check-input position-static" type="checkbox" aria-label="..." />
-                                                            <label className="form-check-label" htmlFor="goalCheckbox">
-                                                                {results.description}
-                                                            </label>
-                                                            <button className = "delBtn" onClick={() => props.handleDelete(results)} style = { deleteStyle }>x</button>
+                       {allDays.map(days => ( 
+                            <div key = { uuidv4() } className = "calList">
+                                <div className = "row">
+                                    <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.8rem", marginBottom: "10px"}}>{ days }</h1>
+                                    <div style = {calListStyle} className = "col-md-12">
+                                        <div className = "row">
+                                            <div style = {allGoals} className = "col-md-12 allGoals">
+                                                <div className = "row">
+                                                    {props.goal.map(results => (
+                                                        <div key = {results._id} id = {results._id} className = "col-md-2">
+                                                            <div style = { checkStyle } className="form-check">
+                                                                <input id = {results._id} onChange = {props.handleCheck} style = {{marginRight: "5px"}} data-toggle = {results.checked} className="form-check-input position-static" type="checkbox" aria-label="..." />
+                                                                <label className="form-check-label" htmlFor="goalCheckbox">
+                                                                    {results.description}
+                                                                </label>
+                                                                <button className = "delBtn" onClick={() => props.handleDelete(results)} style = { deleteStyle }>x</button>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                ))}
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
         </React.Fragment>
@@ -71,7 +83,7 @@ const listedCalendarStyle = {
     marginTop: "10px",
     marginBottom: "50px",
     padding: "20px 60px",
-    height: "fit-content",
+    height: "435px",
     overflow: "auto",
     backgroundColor: "rgb(210, 210, 210)",
     borderRadius: "5px",
@@ -79,13 +91,13 @@ const listedCalendarStyle = {
 }
 
 const monthAndLinks = {
-    marginTop: "20px",
+    marginTop: "50px",
     fontFamily: 'Dosis, sans-serif',
     fontSize: "3rem"
 }
 
 const addLinks = {
-    marginTop: "50px",
+    marginTop: "70px",
     fontFamily: 'Dosis, sans-serif',
     fontSize: "1.5rem"
 }

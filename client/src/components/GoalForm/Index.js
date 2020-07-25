@@ -1,15 +1,14 @@
 import React from 'react';
 import "./GoalForm.css";
-import app from '../../firebase';
+// import app from '../../firebase';
 
 function GoalForm(props)  {
         return (
             <React.Fragment>
-                <button className = "signOutBtn" style = {signOutStyle} onClick = {() => app.auth().signOut()}>Sign Out</button>
-                <div style = {{marginTop: "50px"}} className = "container">
+                <div style = {{marginTop: "70px"}} className = "container">
                     <div className = "row">
                         <div style = {mainCon} className = "col-md-8">
-                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "2rem", marginBottom: "15px"}}>Goal</h1>
+                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.5rem", marginBottom: "15px"}}>Add to calendar</h1>
                             <div className="form-group">
                                 <input
                                 style = {{ border: "3px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}
@@ -22,7 +21,7 @@ function GoalForm(props)  {
                                 placeholder=". . ."
                                 />
                             </div>
-                            <button onClick = {props.handleSubmit} style = {{fontFamily: 'Dosis, sans-serif', padding: "3px 5px"}} type="submit" className="btn btn-primary">Create</button>
+                            <button onClick = {props.handleSubmit} style = {{fontFamily: 'Dosis, sans-serif', padding: "3px 5px"}} type="submit" className="btn btn-primary">Add</button>
                         </div>    
                         <div style = {suggestCon} className = "col-md-3 offset-1">
                             <h3 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.5rem"}}>Suggestions</h3>
@@ -69,13 +68,13 @@ const sugBtn = {
     marginRight: "25px"
 }
 
-const signOutStyle = {
-    padding: "5px",
-    backgroundColor: "#4BB543",
-    border: "none",
-    color: "rgba(255, 217, 0, 0.845)",
-    fontFamily: 'Dosis, sans-serif',
-    float: "right"
-}
+// const signOutStyle = {
+//     padding: "5px",
+//     backgroundColor: "#4BB543",
+//     border: "none",
+//     color: "rgba(255, 217, 0, 0.845)",
+//     fontFamily: 'Dosis, sans-serif',
+//     //float: "right"
+// }
 
 export default GoalForm;

@@ -25,15 +25,11 @@ const SignUp = ({ history }) => {
                         <form onSubmit = {handleSignUp}>
                             <div className ="form-group">
                                 <label htmlFor="emailInput">Email</label>
-                                <input name = "email" type="email" className ="form-control" id="emailInput" placeholder = "email"/>
+                                <input name = "email" type="email" className ="form-control" id="emailInput" placeholder = ". . ."/>
                             </div>
                             <div className ="form-group">
                                 <label htmlFor="passwordInput">Password</label>
-                                <input name = "password" type="password" className ="form-control" id="passwordInput" placeholder = "password"/>
-                            </div>
-                            <div className="form-group form-check">
-                                <input type="checkbox" className="form-check-input" id="savePasswordInput"/>
-                                <label className="form-check-label" htmlFor="savePasswordInput">Remember me</label>
+                                <input name = "password" type="password" className ="form-control" id="passwordInput" placeholder = ". . ."/>
                             </div>
                             <button style = {{backgroundColor: "#4BB543", border: "none"}} type="submit" className="btn btn-primary">Sign Up</button><br/>
                             <div style = {allIcons} className = "icons">
