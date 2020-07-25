@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import About from "../components/About/Index.js"
+import About from "../components/About"
 
 export class AboutPage extends Component {
     render() {
