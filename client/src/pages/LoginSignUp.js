@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SignUp from "../components/SignUp"
-import Login from "../components/Login"
+import LoginForm from "../components/LoginForm"
 import Header from "../components/Header";
 import Helmet from 'react-helmet';
 
@@ -13,7 +13,7 @@ export class LogInSignUp extends Component {
                 <div style = {containerStyle} className = "container">
                     <div className = "row">
                         <SignUp />
-                        <Login />
+                        <LoginForm />
                     </div>
                 </div>
             </div>
