@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BadHabit from "../components/BadHabit/Index";
+import BadHabit from "../components/BadHabit";
 
 export class BadHabitPage extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Home from "../components/Home/Index";
-import GoalForm from "../components/GoalForm/Index";
-import HomeHeader from "../components/Header/HomeHeader";
+import Home from "../components/Home";
+import GoalForm from "../components/GoalForm";
+import HomeHeader from "../components/HomeHeader";
 import API from "../util/API";
 //import moment from "moment";
 //import { update } from '../../../models/checkList'

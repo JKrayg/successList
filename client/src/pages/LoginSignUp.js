@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import SignUp from "../components/SignUp/Index"
-import Login from "../components/Login/Index"
-import Header from "../components/Header/Index";
+import SignUp from "../components/SignUp"
+import Login from "../components/Login"
+import Header from "../components/Header";
 import Helmet from 'react-helmet';
 
 export class LogInSignUp extends Component {
