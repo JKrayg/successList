@@ -8,7 +8,7 @@ function GoalForm(props)  {
                 <div style = {{marginTop: "70px"}} className = "container">
                     <div className = "row">
                         <div style = {mainCon} className = "col-md-8">
-                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.5rem", marginBottom: "15px"}}>Add to calendar</h1>
+                            <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.2rem", marginBottom: "15px"}}>Add Goal</h1>
                             <div className="form-group">
                                 <input
                                 style = {{ border: "1px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}

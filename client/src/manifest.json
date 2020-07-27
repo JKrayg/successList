@@ -1,0 +1,8 @@
+{
+    "name": "successList PWA",
+    "start_url": ".",
+    "display": "standalone",
+    "orientation": "portrait",
+    "backgeound_color": "#ccc",
+    "theme_color": "#5FAAE5"
+}
