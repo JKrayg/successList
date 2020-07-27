@@ -39,7 +39,8 @@ function FAQ() {
 }
 
 const containerStyle = {
-    marginTop: "40px"
+    marginTop: "40px",
+    maxWidth: "960px"
 }
 
 const faqStyle = {

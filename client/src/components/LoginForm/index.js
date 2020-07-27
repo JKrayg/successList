@@ -39,10 +39,6 @@ const LoginForm = ({ history }) => {
                             <label htmlFor="passwordLogin">Password</label>
                             <input name = "password" style = {{height: "25px"}} type="password" className="form-control" id="passwordLogin"/>
                         </div>
-                        <div className="form-group form-check">
-                            <input type="checkbox" className="form-check-input" id="savePassword"/>
-                            <label className="form-check-label" htmlFor="savePassword">Remember me</label>
-                        </div>
                         <button style = {{ backgroundColor: "#4BB543", border : "none" }} type="submit" className="btn btn-primary logInBtn">Log In</button>
                     </form>
                 </div>

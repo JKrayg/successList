@@ -108,7 +108,7 @@ const calListStyle = {
     height: "fit-content",
     marginBottom: "30px",
     backgroundColor: "white",
-    padding: "15px 30px"
+    padding: "15px 40px"
 }
 
 const checkStyle = {

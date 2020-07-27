@@ -72,7 +72,8 @@ function About() {
 }
 
 const containerStyle = {
-    marginTop: "40px"
+    marginTop: "40px",
+    maxWidth: "960px"
 }
 
 const storiesStyle = {

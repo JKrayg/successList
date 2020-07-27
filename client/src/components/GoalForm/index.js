@@ -11,7 +11,7 @@ function GoalForm(props)  {
                             <h1 style = {{fontFamily: 'Dosis, sans-serif', fontSize: "1.5rem", marginBottom: "15px"}}>Add to calendar</h1>
                             <div className="form-group">
                                 <input
-                                style = {{ border: "3px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}
+                                style = {{ border: "1px solid #4BB543", fontFamily: 'Dosis, sans-serif'}}
                                 type="text"
                                 className="form-control"
                                 id="goalInput"

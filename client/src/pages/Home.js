@@ -146,7 +146,7 @@ export class HomePage extends Component {
         //setInterval(currentTime, 1000);
         return (
             <div>
-                <div className = "container">
+                <div style = {{maxWidth: "960px"}} className = "container">
                     <HomeHeader clock = {this.state.currentTime}/>
                     <GoalForm handleValue = {this.handleValue} handleChange = {this.handleChange} handleSubmit = {this.handleSubmit} goal = {this.state.goal} />
                     <Home goal = {this.state.goalsList } handleDelete = {this.handleDelete} handleCheck = {this.handleCheck} clock = {this.state.clock}/>
