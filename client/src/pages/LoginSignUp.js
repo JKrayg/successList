@@ -22,7 +22,8 @@ export class LogInSignUp extends Component {
 }
 
 const containerStyle = {
-    marginTop: "40px"
+    marginTop: "40px",
+    maxWidth: "960px"
 }
 
 export default LogInSignUp;
